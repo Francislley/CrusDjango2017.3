@@ -1,0 +1,129 @@
+body, html {
+    /*background:url("./Img/gris2.jpg");*/
+    background-color: gray !important;
+}
+
+#cintillo {
+    background-color: #282828;
+    /*background-color: #f0f0f0;*/
+    /*background-size: contain;*/
+    height: 150px;
+    max-width: 100%;
+    line-height: 60px;    
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    color: #FFFFFF;
+}
+
+#completo {
+    height: 700px;
+    width:70%;
+    /*background-color: #FFFFFF;*/
+    /*background-color: #f0f0f0;*/
+    background-color: #d2d2d2 !important;
+    margin: auto;
+    margin-top: 160px;
+    /*top: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;*/
+    /*position: absolute;*/
+    border:ridge 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#cabecera {
+    background-color: #FFFFFF;
+    /*background-color: #DADADA;*/
+    height: 80px;
+    width:100%;
+    /*float: left;*/
+    margin: auto;
+    border:ridge 1px;
+    margin-top: 0px;
+    overflow: auto;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#cuerpo {
+    /*background-color: #FAFAFA;*/
+    /*background-color: #DADADA;*/
+    background-color: #FFFFFF;
+    /*height: 300px;*/
+    height: 87%;
+    width:100%;
+    margin-top: 10px !important;
+    margin: auto;
+    /*border-top: 1px solid gray;*/
+    border:ridge 1px;
+    padding-left: 10;
+    padding-top: 10;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+#cuerpo2 {
+    background-color: #FAFAFA;
+    height: 200px;
+    width:98%;
+    /*float: left;*/
+    margin-top: 10px;
+    margin: auto;
+    overflow: auto;
+    border:ridge 1px;
+    margin-top: 10px !important;
+    border-radius: 5px;
+    padding: 10;
+}
+
+#cuerpo3 {
+    background-color: #FAFAFA;
+    height: 200px;
+    width:98%;
+    /*float: left;*/
+    margin: auto;
+    margin-top: 10px !important;
+    border:ridge 1px;
+    overflow: auto;
+    border-radius: 5px;
+    padding: 10;
+}
+
+#footer {
+    /*background-color: #F2F2F2;*/
+    height: 80px;
+    width:98%;
+    /*float: left;*/
+    margin-top: 10px !important;
+    margin: auto;
+    border:ridge 1px;
+    border-radius: 5px;
+    padding: 10;
+}
+
+#footer {
+    /*z-index: 10000;*/
+    background-color: rgb(62, 61, 61);
+    left: 0px;
+    bottom: 0px;
+    height: 40px;
+    /*width: 100%;*/
+    padding: .5em 1em 1em;
+    /*border-top: 1px solid rgb(221, 221, 221);
+    border-top: 1px solid black;*/
+    /*position: fixed;*/
+    color: #FFFFFF;
+    border: solid 1px black;
+    max-width: 100%;
+    /*line-height: 60px;*/
+    top: 10; 
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    position: relative;
+}

@@ -1,4 +1,16 @@
+{% extends "registro/base.html" %}
+
+{% block titulo %}Registro del Congreso{% endblock %}
+
+{% block cintillo %}
+<h3>Cintillo</h3>
+{% endblock %}
+
+{% block cuerpo %}
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
 </form>
+{% endblock %}
+
+
