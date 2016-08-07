@@ -7,12 +7,34 @@
 {% endblock %}
 
 {% block cuerpo %}
-<h1>Registrar</h1>
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Registrar" />
-    <input type="reset" value="Limpiar" />
-</form>
+<span id="ruta_title">
+	<h1>Registrar ></h1>
+</span>
+<div align="center">
+	<div id="formulario">
+		<form method="post">{% csrf_token %}
+		    <!--{{ form.as_p }}-->
+		    <table id="tabla_registro" border="0px" cellpadding="10px" cellspacing="10px">
+				<tr>
+					<td><b>Nombre</b> {{ form.nombre }}</td>
+				</tr>
+				<tr>
+					<td><b>Apellido</b> {{ form.apellido }}</td>
+				</tr>
+				<tr>
+					<td><b>Cedula</b> {{ form.cedula }}</td>
+				</tr>
+				<tr>
+					<td><b>Telefono</b> {{ form.tlf }}</td>
+				</tr>
+				<tr>
+					<td><b>Ocupacion</b> {{ form.ocupacion }}</td>
+				</tr>
+			</table>
+			<br />
+		    <input type="submit" value="Registrar" />
+		    <input type="reset" value="Limpiar" />
+		</form>
+	</div>
+</div>
 {% endblock %}
-
-

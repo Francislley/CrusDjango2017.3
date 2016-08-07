@@ -62,37 +62,10 @@ body, html {
     margin: auto;
     /*border-top: 1px solid gray;*/
     border:ridge 1px;
-    padding-left: 10;
-    padding-top: 10;
+    padding-left: 20px;
+    padding-top: 0px;
     overflow: auto;
     border-radius: 5px;
-}
-
-#cuerpo2 {
-    background-color: #FAFAFA;
-    height: 200px;
-    width:98%;
-    /*float: left;*/
-    margin-top: 10px;
-    margin: auto;
-    overflow: auto;
-    border:ridge 1px;
-    margin-top: 10px !important;
-    border-radius: 5px;
-    padding: 10;
-}
-
-#cuerpo3 {
-    background-color: #FAFAFA;
-    height: 200px;
-    width:98%;
-    /*float: left;*/
-    margin: auto;
-    margin-top: 10px !important;
-    border:ridge 1px;
-    overflow: auto;
-    border-radius: 5px;
-    padding: 10;
 }
 /*
 #footer {
@@ -143,4 +116,29 @@ body, html {
 #botonera {
     /*border: 1px solid red;)*/
     width: 99%;
+}
+
+#formulario {
+    /*border: 1px solid red;*/
+    /*width: 50%;*/
+}
+
+table#tabla_registro {
+    text-align: right;
+}
+
+table#tabla_registro td {
+    padding: 10px !important;
+}
+
+#ruta_title {
+    color: green;
+}
+
+table#tabla_consulta {
+    text-align: right;
+}
+
+table#tabla_consulta td {
+    padding: 10px !important;
 }

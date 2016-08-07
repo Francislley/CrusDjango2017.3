@@ -7,30 +7,34 @@
 {% endblock %}
 
 {% block cuerpo %}
-<h1>Registros</h1>
-<table border="1px" cellpadding="2px" cellspacing="2px">
-	<tr>
-		<td><b>N</b></td>
-		<td><b>Nombre</b></td>
-		<td><b>Apellido</b></td>
-		<td><b>Cedula</b></td>
-		<td><b>Telefono</b></td>
-		<td><b>Ocupacion</b></td>
-		<td><b>Editar</b></td>
-		<td><b>borrar</b></td>
-	</tr>
-	{% for persona in object_list %}
-	<tr>
-		<td>{{ persona.id }}</td>
-		<td>{{ persona.nombre }}</td>
-		<td>{{ persona.apellido }}</td>
-		<td>{{ persona.cedula }}</td>
-		<td>{{ persona.tlf }}</td>
-		<td>{{ persona.ocupacion }}</td>
-		<td><a href="{% url 'registro:editar' persona.id %}">editar</a></td>
-		<td><a href="{% url 'registro:borrar' persona.id %}">borrar</a></td>
-    </li>
-	</tr>
-	{% endfor %}
-</table>
+<span id="ruta_title">
+	<h1>Registros ></h1>
+</span>
+<div align="center">
+	<table id="tabla_consulta" border="1px" cellpadding="10px" cellspacing="10px">
+		<tr>
+			<td><b>N</b></td>
+			<td><b>Nombre</b></td>
+			<td><b>Apellido</b></td>
+			<td><b>Cedula</b></td>
+			<td><b>Telefono</b></td>
+			<td><b>Ocupacion</b></td>
+			<td><b>Editar</b></td>
+			<td><b>borrar</b></td>
+		</tr>
+		{% for persona in object_list %}
+		<tr>
+			<td>{{ persona.id }}</td>
+			<td>{{ persona.nombre }}</td>
+			<td>{{ persona.apellido }}</td>
+			<td>{{ persona.cedula }}</td>
+			<td>{{ persona.tlf }}</td>
+			<td>{{ persona.ocupacion }}</td>
+			<td><a href="{% url 'registro:editar' persona.id %}">editar</a></td>
+			<td><a href="{% url 'registro:borrar' persona.id %}">borrar</a></td>
+	    </li>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
 {% endblock %}
