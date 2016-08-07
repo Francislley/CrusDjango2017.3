@@ -7,13 +7,28 @@
 {% endblock %}
 
 {% block cuerpo %}
-<h1>Registro del Congreso</h1>
-<ul>
-    {% for persona in object_list %}
-    <li>{{ persona.nombre }} {{ persona.cedula }}
-	    <a href="{% url 'registro:editar' persona.id %}">editar</a>
-	    <a href="{% url 'registro:borrar' persona.id %}">borrar</a>
+<h1>Registros</h1>
+<table border="1px" cellpadding="2px" cellspacing="2px">
+	<tr>
+		<td><b>N</b></td>
+		<td><b>Nombre</b></td>
+		<td><b>Cedula</b></td>
+		<td><b>Editar</b></td>
+		<td><b>borrar</b></td>
+	</tr>
+	{% for persona in object_list %}
+	<tr>
+		<td>{{ persona.id }}</td>
+		<td>{{ persona.nombre }}</td>
+		<td>{{ persona.cedula }}</td>
+		<td><a href="{% url 'registro:editar' persona.id %}">editar</a></td>
+		<td><a href="{% url 'registro:borrar' persona.id %}">borrar</a></td>
     </li>
-    {% endfor %}
-</ul>
+	</tr>
+	{% endfor %}
+</table>
 {% endblock %}
+
+
+
+

@@ -11,11 +11,20 @@ class PersonaForm(ModelForm):
         model = Persona
         fields = ['nombre', 'cedula']
 
+
+
+def Index(request, template_name='registro/index.html'):
+    return render(request, template_name)
+
+
+
 def Consultar(request, template_name='registro/consultar.html'):
     persona = Persona.objects.all()
     data = {}
     data['object_list'] = persona
     return render(request, template_name, data)
+
+
 
 def Registrar(request, template_name='registro/registrar.html'):
     form = PersonaForm(request.POST or None)
@@ -24,6 +33,8 @@ def Registrar(request, template_name='registro/registrar.html'):
         return redirect('registro:consultar')
     return render(request, template_name, {'form':form})
 
+
+
 def Editar(request, pk, template_name='registro/registrar.html'):
     persona= get_object_or_404(Persona, pk=pk)
     form = PersonaForm(request.POST or None, instance=persona)
@@ -31,6 +42,8 @@ def Editar(request, pk, template_name='registro/registrar.html'):
         form.save()
         return redirect('registro:consultar')
     return render(request, template_name, {'form':form})
+
+
 
 def Borrar(request, pk, template_name='registro/borrar.html'):
     persona= get_object_or_404(Persona, pk=pk)    

@@ -93,19 +93,19 @@ body, html {
     border-radius: 5px;
     padding: 10;
 }
-
+/*
 #footer {
-    /*background-color: #F2F2F2;*/
+    /*background-color: #F2F2F2;
     height: 80px;
     width:98%;
-    /*float: left;*/
+    float: left;
     margin-top: 10px !important;
     margin: auto;
     border:ridge 1px;
     border-radius: 5px;
     padding: 10;
 }
-
+*/
 #footer {
     /*z-index: 10000;*/
     background-color: rgb(62, 61, 61);
