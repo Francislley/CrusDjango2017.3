@@ -9,7 +9,7 @@ from registro.models import Persona
 class PersonaForm(ModelForm):
     class Meta:
         model = Persona
-        fields = ['nombre', 'cedula']
+        fields = ['nombre','apellido','cedula','tlf','ocupacion',]
 
 
 

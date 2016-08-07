@@ -48,6 +48,7 @@ body, html {
     overflow: auto;
     border-radius: 5px;
     padding-left: 10px;
+    padding: 22px;
 }
 
 #cuerpo {
@@ -126,4 +127,20 @@ body, html {
     left: 0;
     right: 0; 
     position: relative;
+}
+
+#boton {
+    /*font-size:15px;
+    font-weight:bold;
+    color:black;
+    background:gray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px gray;*/
+    width: 150px;
+    margin-left: 15px;
+}
+
+#botonera {
+    /*border: 1px solid red;)*/
+    width: 99%;
 }

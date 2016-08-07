@@ -10,7 +10,8 @@
 <h1>Registrar</h1>
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Registrar" />
+    <input type="reset" value="Limpiar" />
 </form>
 {% endblock %}
 

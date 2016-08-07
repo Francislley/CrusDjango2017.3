@@ -12,7 +12,10 @@
 	<tr>
 		<td><b>N</b></td>
 		<td><b>Nombre</b></td>
+		<td><b>Apellido</b></td>
 		<td><b>Cedula</b></td>
+		<td><b>Telefono</b></td>
+		<td><b>Ocupacion</b></td>
 		<td><b>Editar</b></td>
 		<td><b>borrar</b></td>
 	</tr>
@@ -20,7 +23,10 @@
 	<tr>
 		<td>{{ persona.id }}</td>
 		<td>{{ persona.nombre }}</td>
+		<td>{{ persona.apellido }}</td>
 		<td>{{ persona.cedula }}</td>
+		<td>{{ persona.tlf }}</td>
+		<td>{{ persona.ocupacion }}</td>
 		<td><a href="{% url 'registro:editar' persona.id %}">editar</a></td>
 		<td><a href="{% url 'registro:borrar' persona.id %}">borrar</a></td>
     </li>
@@ -28,7 +34,3 @@
 	{% endfor %}
 </table>
 {% endblock %}
-
-
-
-

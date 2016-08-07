@@ -19,7 +19,11 @@
     <div id="completo">
         <div id="cabecera">
         {% block cabecera %}
-            <a href="{% url 'registro:index' %}">Inicio</a> | <a href="{% url 'registro:registrar' %}">Registrar</a> | <a href="{% url 'registro:consultar' %}">Consultar</a>
+            <div id="botonera" align="center">
+                <a href="{% url 'registro:index' %}"><button id="boton" class="btn btn-success">Inicio</button></a>
+                <a href="{% url 'registro:registrar' %}"><button id="boton" class="btn btn-success">Registrar</button></a>
+                <a href="{% url 'registro:consultar' %}"><button id="boton" class="btn btn-success">Consultar</button></a>
+            </div>
 	    {% endblock %}
         </div>
         <div id="cuerpo">
