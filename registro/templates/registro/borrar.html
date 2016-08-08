@@ -2,10 +2,6 @@
 
 {% block titulo %}Registro del Congreso{% endblock %}
 
-{% block cintillo %}
-<h3>Cintillo</h3>
-{% endblock %}
-
 {% block cuerpo %}
 <form method="post">{% csrf_token %}
     ¿Esta seguro de eliminar a "{{ object }}"?

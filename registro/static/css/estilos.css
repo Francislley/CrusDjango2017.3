@@ -15,7 +15,7 @@ body, html {
     left: 0;
     right: 0;
     position: absolute;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 
 #completo {
@@ -141,4 +141,14 @@ table#tabla_consulta {
 
 table#tabla_consulta td {
     padding: 10px !important;
+}
+
+#user_authenticated {
+    color: lime !important;
+    margin-left: 20px;
+}
+
+#not_user_authenticated {
+    color: red !important;
+    margin-left: 20px;
 }

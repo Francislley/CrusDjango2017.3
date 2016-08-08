@@ -11,10 +11,17 @@
     </head>
 <body>
     <div id="cintillo">
-        <div align="center">
-        {% block cintillo %}
-        {% endblock %}
-        </div>
+    {% block cintillo %}
+        {% if request.user.is_authenticated %}
+            <div id="user_authenticated">
+                Bienvenido: <b>{{user.username}}</b>
+            </div>
+        {% else %}
+            <div id="not_user_authenticated">
+                <b>Usuario Invitado</b>
+            </div>
+        {% endif %}
+    {% endblock %}
     </div>
     <div id="completo">
         <div id="cabecera">
