@@ -1,21 +1,18 @@
-{% extends "registro/base.html" %}
+{% extends "registro/base_login.html" %}
 
-{% block titulo %}Registro del Congreso{% endblock %}
+{% block titulo %}Iniciar sesión{% endblock %}
 
 {% block cuerpo %}
-<span id="ruta_title">
-	<h1>Iniciar sesión</h1>
-</span>
-<div id="form_login_admin" align="center">
+<div id="form_login" align="center">
 	<form id='formulario' method='post' action=''>{% csrf_token %}
 		<!--table>{{formulario}}</table-->
-		<table id="tabla_login" border="0px" cellpadding="1px" cellspacing="5px" style="text-align: right">
+		<table border="0px" cellpadding="1px" cellspacing="5px" style="text-align: right">
 			<tr>
 				<td>Nombre de Usuario: {{formulario.username}}</td>
 			</tr>
 			<tr>
 				<td>Contraseña: {{formulario.password}}</td>
-			</tr>
+			</tr>				
 		</table>
 		<br />
 		<p><input type='submit' value='Ingresar'/>
