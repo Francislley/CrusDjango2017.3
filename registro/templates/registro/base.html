@@ -14,11 +14,13 @@
     {% block cintillo %}
         {% if request.user.is_authenticated %}
             <div id="user_authenticated">
-                Bienvenido: <b>{{user.username}}</b>
+                Bienvenido: <b>{{user.username}}</b><br />
+                <a href="{% url 'registro:logout' %}"><button id="boton_logout" class="btn btn-danger">Cerrar sesión</button></a>
             </div>
         {% else %}
             <div id="not_user_authenticated">
-                <b>Usuario Invitado</b>
+                <b>Usuario Invitado</b><br />
+                <a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-success">Crear Cuenta</button></a>
             </div>
         {% endif %}
     {% endblock %}
@@ -26,11 +28,16 @@
     <div id="completo">
         <div id="cabecera">
         {% block cabecera %}
-            <div id="botonera" align="center">
-                <a href="{% url 'registro:index' %}"><button id="boton" class="btn btn-success">Inicio</button></a>
-                <a href="{% url 'registro:registrar' %}"><button id="boton" class="btn btn-success">Registrar</button></a>
-                <a href="{% url 'registro:consultar' %}"><button id="boton" class="btn btn-success">Consultar</button></a>
-            </div>
+            {% if request.user.is_authenticated %}
+                <div id="botonera" align="center">
+                    <a href="{% url 'registro:index' %}"><button id="boton" class="btn btn-success">Inicio</button></a>
+                    <a href="{% url 'registro:registrar' %}"><button id="boton" class="btn btn-success">Registrar</button></a>
+                    <a href="{% url 'registro:consultar' %}"><button id="boton" class="btn btn-success">Consultar</button></a>
+                </div>
+            {% else %}
+                <div id="botonera" align="center">
+                </div>
+            {% endif %}
 	    {% endblock %}
         </div>
         <div id="cuerpo">

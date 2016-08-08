@@ -113,6 +113,11 @@ body, html {
     margin-left: 15px;
 }
 
+#boton_logout {
+    width: 150px;
+    /*margin-left: 15px;*/
+}
+
 #botonera {
     /*border: 1px solid red;)*/
     width: 99%;
@@ -149,6 +154,6 @@ table#tabla_consulta td {
 }
 
 #not_user_authenticated {
-    color: red !important;
+    color: orange !important;
     margin-left: 20px;
 }

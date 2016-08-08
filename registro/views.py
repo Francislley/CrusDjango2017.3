@@ -38,8 +38,8 @@ def Login(request):
             clave = request.POST['password']
             acceso = authenticate(username=usuario, password=clave)
             if acceso is not None:
-                #if acceso.is_active:
-                if acceso.is_staff:
+                if acceso.is_active:
+                #if acceso.is_staff:
                     login(request, acceso)
                     return HttpResponseRedirect('index')
                 else:
@@ -49,6 +49,22 @@ def Login(request):
     else:
         formulario = AuthenticationForm()
     return render_to_response('registro/login.html',{'formulario':formulario}, context_instance=RequestContext(request))
+
+
+
+def Crear_usuario(request):
+    usuario = request.user
+    if request.method == 'POST':
+        form = MyRegistrationForm(request.POST)
+        if form.is_valid():
+            nuevo_usuario = form.save()
+            return render_to_response('registro/registro_exitoso.html', context_instance=RequestContext(request))
+        else:
+            return HttpResponseRedirect('/index')
+    args = {}
+    args['form'] = MyRegistrationForm()
+    #return render_to_response('registro/crear_usuario.html', {'args':args}, context_instance=RequestContext(request))
+    return render(request, 'registro/crear_usuario.html', args)
 
 
 
@@ -93,3 +109,10 @@ def Borrar(request, pk, template_name='registro/borrar.html'):
         persona.delete()
         return redirect('registro:consultar')
     return render(request, template_name, {'object':persona})
+
+
+
+@login_required(login_url='/')
+def Logout(request):
+    logout(request)
+    return HttpResponseRedirect('/')
