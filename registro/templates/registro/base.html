@@ -15,6 +15,8 @@
         {% if request.user.is_authenticated %}
             <div id="user_authenticated">
                 Bienvenido: <b>{{user.username}}</b><br />
+                <a href="{% url 'registro:cambiar_contrasena' %}"><button id="boton_logout" class="btn btn-primary">Cambiar contraseña</button></a>
+                <br />
                 <a href="{% url 'registro:logout' %}"><button id="boton_logout" class="btn btn-danger">Cerrar sesión</button></a>
             </div>
         {% else %}

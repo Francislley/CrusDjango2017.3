@@ -136,6 +136,15 @@ table#tabla_registro td {
     padding: 10px !important;
 }
 
+table#tabla_cambio_contrasena td {
+    padding: 10px !important;
+}
+
+table#tabla_login td {
+    padding: 10px !important;
+}
+    
+
 #ruta_title {
     color: green;
 }

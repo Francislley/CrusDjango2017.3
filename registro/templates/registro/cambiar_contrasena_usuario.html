@@ -1,0 +1,28 @@
+{% extends "registro/base.html" %}
+
+{% block titulo %}Registro del Congreso{% endblock %}
+
+{% block cuerpo %}
+<span id="ruta_title">
+	<h1>Cambiar Contraseña</h1>
+</span>
+<div align="center">
+	<form action="" method="post"> {% csrf_token %}
+		<!--table>{{ form }}</table-->
+		<table id="tabla_cambio_contrasena" border="0px" cellpadding="1px" cellspacing="5px" style="text-align: right">
+			<tr>
+				<td>Ingrese su contraseña actual: {{form.old_password}}</td>
+			</tr>
+			<tr>
+				<td>Ingrese su nueva contraseña: {{form.new_password1}}</td>
+			</tr>
+			<tr>
+				<td>Confirmar contraseña: {{form.new_password2}}</td>
+			</tr>				
+		</table>
+	    <br />
+	    <input type="submit" value="Cambiar contraseña">
+		<input type="reset" value="Borrar"></p>
+	</form>
+</div>
+{% endblock %}

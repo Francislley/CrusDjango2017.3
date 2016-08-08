@@ -152,7 +152,31 @@ def Logout(request):
 '''
 Vista de la plantilla que se muestra cuando la cuenta de usuario se creó correctamente.
 '''
-@login_required(login_url='/')
 def Registro_exitoso(request):
     usuario = request.user
     return render_to_response('registro/registro_exitoso.html', {'usuario':usuario}, context_instance=RequestContext(request))
+
+
+
+'''
+Vista de la plantilla que se muestra el formulario para cambiar la contraseña de la cuenta creada.
+'''
+@login_required(login_url='/')
+def Cambiar_contrasena(request):
+    form = PasswordChangeForm(user=request.user)
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/cambio_de_contrasena_exitoso')
+        else:
+            return HttpResponseRedirect('/cambiar_contrasena')
+    return render(request, 'registro/cambiar_contrasena_usuario.html', {'form': form,})
+
+
+'''
+Vista de la plantilla que muestra mensaje de cambio de contraseña exitoso.
+'''
+def Cambio_de_contrasena_exitoso(request):
+    usuario = request.user
+    return render_to_response('registro/cambio_de_contrasena_exitoso.html', {'usuario':usuario}, context_instance=RequestContext(request))

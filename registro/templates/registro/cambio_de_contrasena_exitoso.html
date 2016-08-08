@@ -1,0 +1,11 @@
+{% extends "registro/base.html" %}
+
+{% block titulo %}Registro del Congreso{% endblock %}
+
+{% block cuerpo %}
+<div align="center">
+	<h3>¡Cambio de contraseña exitoso!</h3>
+	<br />
+	<a href="{% url 'registro:index' %}"><button id="boton" class="btn btn-warning">Volver</button></a>
+</div>
+{% endblock %}
