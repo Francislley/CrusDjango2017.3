@@ -1,25 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from django.shortcuts import render, redirect, get_object_or_404
-from django.shortcuts import render_to_response
-from django.forms import ModelForm
-from django.http import HttpResponseRedirect
-#Authentication libs
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AdminPasswordChangeForm
 from django.contrib.auth import login, authenticate, logout
-from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.forms import UserCreationForm
 from django.core.context_processors import csrf
+from django.shortcuts import render_to_response
+from registro.forms import MyRegistrationForm
+from django.http import HttpResponseRedirect
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
 from django.template import RequestContext
-from registro.forms import MyRegistrationForm
+from django.http import HttpResponse
+from registro.models import Persona
+from django.forms import ModelForm
 from django.contrib import auth
 
-from registro.models import Persona
+
 
 class PersonaForm(ModelForm):
     class Meta:
@@ -28,6 +28,10 @@ class PersonaForm(ModelForm):
 
 
 
+'''
+Función que valida si un usuario está autenticado, si no está autenticado
+se muestra el formulario de logeo.
+'''
 def Login(request):
     if not request.user.is_anonymous():
         return HttpResponseRedirect('/index')
@@ -52,6 +56,10 @@ def Login(request):
 
 
 
+'''
+Función que permite crear usuarios, si la cuenta se creo con éxito
+se redirige a otra plantilla.
+'''
 def Crear_usuario(request):
     usuario = request.user
     if request.method == 'POST':
@@ -69,6 +77,9 @@ def Crear_usuario(request):
 
 
 
+'''
+Vista de la plantilla principal, accede a esta luego de iniciar sesión.
+'''
 @login_required(login_url='/')
 def Index(request):
     usuario = request.user
@@ -76,6 +87,9 @@ def Index(request):
 
 
 
+'''
+Vista de la plantilla para consultar participantes registrados del congreso.
+'''
 @login_required(login_url='/')
 def Consultar(request, template_name='registro/consultar.html'):
     persona = Persona.objects.all()
@@ -84,6 +98,10 @@ def Consultar(request, template_name='registro/consultar.html'):
     return render(request, template_name, data)
 
 
+
+'''
+Vista de la plantilla para registrar participantes del congreso.
+'''
 @login_required(login_url='/')
 def Registrar(request, template_name='registro/registrar.html'):
     form = PersonaForm(request.POST or None)
@@ -93,6 +111,10 @@ def Registrar(request, template_name='registro/registrar.html'):
     return render(request, template_name, {'form':form})
 
 
+
+'''
+Vista de la plantilla para editar los datos de los participantes del congreso.
+'''
 @login_required(login_url='/')
 def Editar(request, pk, template_name='registro/registrar.html'):
     persona= get_object_or_404(Persona, pk=pk)
@@ -103,6 +125,10 @@ def Editar(request, pk, template_name='registro/registrar.html'):
     return render(request, template_name, {'form':form})
 
 
+
+'''
+Vista de la plantilla para eliminar participantes del congreso.
+'''
 @login_required(login_url='/')
 def Borrar(request, pk, template_name='registro/borrar.html'):
     persona= get_object_or_404(Persona, pk=pk)    
@@ -113,6 +139,9 @@ def Borrar(request, pk, template_name='registro/borrar.html'):
 
 
 
+'''
+Funcion que cierra la sesión del usuario.
+'''
 @login_required(login_url='/')
 def Logout(request):
     logout(request)
@@ -120,7 +149,10 @@ def Logout(request):
 
 
 
-#@login_required(login_url='/')
+'''
+Vista de la plantilla que se muestra cuando la cuenta de usuario se creó correctamente.
+'''
+@login_required(login_url='/')
 def Registro_exitoso(request):
     usuario = request.user
     return render_to_response('registro/registro_exitoso.html', {'usuario':usuario}, context_instance=RequestContext(request))
