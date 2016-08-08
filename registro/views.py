@@ -58,9 +58,10 @@ def Crear_usuario(request):
         form = MyRegistrationForm(request.POST)
         if form.is_valid():
             nuevo_usuario = form.save()
-            return render_to_response('registro/registro_exitoso.html', context_instance=RequestContext(request))
+            #return render_to_response('registro/registro_exitoso.html', context_instance=RequestContext(request))
+            return HttpResponseRedirect('/registro_exitoso')
         else:
-            return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('registro/index')
     args = {}
     args['form'] = MyRegistrationForm()
     #return render_to_response('registro/crear_usuario.html', {'args':args}, context_instance=RequestContext(request))
@@ -116,3 +117,10 @@ def Borrar(request, pk, template_name='registro/borrar.html'):
 def Logout(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
+
+#@login_required(login_url='/')
+def Registro_exitoso(request):
+    usuario = request.user
+    return render_to_response('registro/registro_exitoso.html', {'usuario':usuario}, context_instance=RequestContext(request))
