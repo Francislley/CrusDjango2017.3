@@ -27,7 +27,8 @@
             {% else %}
                 <div id="not_user_authenticated" align="center">
                     <b>Usuario Invitado</b><br />
-                    <a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-success">Crear Cuenta</button></a>
+                    <a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-success">Crear Cuenta</button></a><br />
+                    <a href="{% url 'registro:login' %}"><button id="boton_volver" class="btn btn-danger">Volver</button></a>
                 </div>
             {% endif %}
         </div>

@@ -105,6 +105,11 @@ body, html {
     margin-top: -15px !important;
 }
 
+#boton_volver {
+    width: 150px;
+    margin-top: 11px !important;
+}
+
 #boton_cambiar_contrasena {
     width: 150px;
     margin-top: -15px !important;

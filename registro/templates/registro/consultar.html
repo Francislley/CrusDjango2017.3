@@ -6,17 +6,46 @@
 <span id="ruta_title">
 	<h1>Registros</h1>
 </span>
+<br />
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#tabla_consulta th    {
+    background-color: DodgerBlue;
+    color: white;
+}
+table#tabla_consulta {
+  color: black;
+}
+
+table#tabla_consulta tr:nth-child(even) {
+}
+table#tabla_consulta tr:nth-child(even):hover {
+    background-color: #A9E2F3;
+}
+table#tabla_consulta tr:nth-child(odd) {
+}
+table#tabla_consulta tr:nth-child(odd):hover {
+   background-color: #A9E2F3;
+}
+</style>
 <div align="center">
 	<table id="tabla_consulta" border="1px" cellpadding="10px" cellspacing="10px">
 		<tr>
-			<td><b>N</b></td>
-			<td><b>Nombre</b></td>
-			<td><b>Apellido</b></td>
-			<td><b>Cedula</b></td>
-			<td><b>Telefono</b></td>
-			<td><b>Ocupacion</b></td>
-			<td><b>Editar</b></td>
-			<td><b>borrar</b></td>
+			<th><b>N</b></th>
+			<th><b>Nombre</b></th>
+			<th><b>Apellido</b></th>
+			<th><b>Cedula</b></th>
+			<th><b>Telefono</b></th>
+			<th><b>Ocupacion</b></th>
+			<th><b>Editar</b></th>
+			<th><b>Borrar</b></th>
 		</tr>
 		{% for persona in object_list %}
 		<tr>

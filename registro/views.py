@@ -174,6 +174,7 @@ def Cambiar_contrasena(request):
     return render(request, 'registro/cambiar_contrasena_usuario.html', {'form': form,})
 
 
+
 '''
 Vista de la plantilla que muestra mensaje de cambio de contraseña exitoso.
 '''
