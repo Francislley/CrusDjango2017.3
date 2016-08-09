@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+       	    {% block titulo %}Base{% endblock %}
+        </title>
+	    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	    {% load staticfiles %}
+	    <link rel="stylesheet" type="text/css" href="{% static 'login/css/syle.css' %}" />
+	    <!--link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" /-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/css/normalize.css' %}" />
+	    <!--script src="{% static 'bootstrap/js/bootstrap.js' %}" type="text/javascript"></script-->
+        <script src="{% static 'login/js/prefixfree.min.js' %}" type="text/javascript"></script>
+    </head>
+<body>
+    <div id="completo">
+        <div id="cuerpo" align="center">
+            {% if request.user.is_authenticated %}
+                <div id="user_authenticated">
+                    Bienvenido: <b>{{user.username}}</b><br />
+                    <a href="{% url 'registro:cambiar_contrasena' %}"><button id="boton_logout" class="btn btn-primary">Cambiar contraseña</button></a>
+                    <br />
+                    <a href="{% url 'registro:logout' %}"><button id="boton_logout" class="btn btn-danger">Cerrar sesión</button></a>
+                </div>
+            {% else %}
+                <div id="not_user_authenticated" align="center">
+                    <b>Usuario Invitado</b>
+                    <a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-success">Crear Cuenta</button></a>
+                </div>
+            {% endif %}
+            {% block cuerpo %}
+    	    {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

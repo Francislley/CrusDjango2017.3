@@ -3,20 +3,22 @@
 {% block titulo %}Iniciar sesión{% endblock %}
 
 {% block cuerpo %}
-<div id="form_login" align="center">
+<div id="titulo_login" align="center">
+	<h1>Sistema de Registro<br />
+	de participantes <br />
+	del Congreso
+	</h1>
+</div>
+<div class="login">
 	<form id='formulario' method='post' action=''>{% csrf_token %}
-		<!--table>{{formulario}}</table-->
-		<table border="0px" cellpadding="1px" cellspacing="5px" style="text-align: right">
-			<tr>
-				<td>Nombre de Usuario: {{formulario.username}}</td>
-			</tr>
-			<tr>
-				<td>Contraseña: {{formulario.password}}</td>
-			</tr>				
-		</table>
+		Nombre de Usuario: {{formulario.username}}
 		<br />
-		<p><input type='submit' value='Ingresar'/>
-		<input type="reset" value="Borrar"></p>
+		<br />
+		Contraseña: {{formulario.password}}
+		<br />
+		<br />
+		<button type="submit" class="btn btn-primary btn-block btn-large">Entrar</button>
 	</form>
+	<a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-primary btn-block btn-large">Crear Cuenta</button></a>
 </div>
 {% endblock %}

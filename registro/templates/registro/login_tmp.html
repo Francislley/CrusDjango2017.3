@@ -1,0 +1,22 @@
+{% extends "registro/base_login.html" %}
+
+{% block titulo %}Iniciar sesión{% endblock %}
+
+{% block cuerpo %}
+<div id="form_login" align="center">
+	<form id='formulario' method='post' action=''>{% csrf_token %}
+		<!--table>{{formulario}}</table-->
+		<table border="0px" cellpadding="1px" cellspacing="5px" style="text-align: right">
+			<tr>
+				<td>Nombre de Usuario: {{formulario.username}}</td>
+			</tr>
+			<tr>
+				<td>Contraseña: {{formulario.password}}</td>
+			</tr>				
+		</table>
+		<br />
+		<p><input type='submit' value='Ingresar'/>
+		<input type="reset" value="Borrar"></p>
+	</form>
+</div>
+{% endblock %}
