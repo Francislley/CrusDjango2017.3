@@ -12,19 +12,25 @@
 <body>
     <div id="cintillo">
     {% block cintillo %}
-        {% if request.user.is_authenticated %}
-            <div id="user_authenticated">
-                Bienvenido: <b>{{user.username}}</b><br />
-                <a href="{% url 'registro:cambiar_contrasena' %}"><button id="boton_logout" class="btn btn-primary">Cambiar contraseña</button></a>
-                <br />
-                <a href="{% url 'registro:logout' %}"><button id="boton_logout" class="btn btn-danger">Cerrar sesión</button></a>
-            </div>
-        {% else %}
-            <div id="not_user_authenticated">
-                <b>Usuario Invitado</b><br />
-                <a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-success">Crear Cuenta</button></a>
-            </div>
-        {% endif %}
+        <div id="cintillo_contenido">
+            {% if request.user.is_authenticated %}
+                <div id="user_authenticated">
+                    Bienvenido: <b>{{user.username}}</b><br />
+                    <a href="{% url 'registro:cambiar_contrasena' %}"><button id="boton_cambiar_contrasena" class="btn btn-primary">Cambiar contraseña</button></a>
+                    <br />
+                    <a href="{% url 'registro:logout' %}"><button id="boton_logout" class="btn btn-danger">Cerrar sesión</button></a>
+                </div>
+                <span id="titulo_cintillo">
+                    <h1>Sistema de Registro de participantes <br />
+                    del Congreso </h1>
+                </span>
+            {% else %}
+                <div id="not_user_authenticated" align="center">
+                    <b>Usuario Invitado</b><br />
+                    <a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-success">Crear Cuenta</button></a>
+                </div>
+            {% endif %}
+        </div>
     {% endblock %}
     </div>
     <div id="completo">
@@ -40,17 +46,21 @@
                 <div id="botonera" align="center">
                 </div>
             {% endif %}
-	    {% endblock %}
+        {% endblock %}
         </div>
         <div id="cuerpo">
         {% block cuerpo %}
-	    {% endblock %}
-        </div>
+        XXXXXXXXXXx
+        {% endblock %}
+        </div>        
     </div>
-    <div id="footer">
-        <div align="center">
-            XXXXXXXXXXX
-        </div>
+    <div id="footer" align="center">
+    {% block footer %}
+        <span id="texto_footer">
+            <p>Pueden haber varios aspectos predeterminados pero también el usuario tendría que tener <br />
+                la opción de crear nuevos aspectos (JC) (DH).</p>
+        </span>
+    {% endblock %}
     </div>
 </body>
 </html>
