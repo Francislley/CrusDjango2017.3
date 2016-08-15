@@ -3,9 +3,8 @@
 {% block titulo %}Registro del Congreso{% endblock %}
 
 {% block cuerpo %}
-<span id="ruta_title">
-	<h1>Cambiar Contraseña</h1>
-</span>
+<h1>Cambiar Contraseña</h1>
+<br />
 <div align="center">
 	<form action="" method="post"> {% csrf_token %}
 		<!--table>{{ form }}</table-->
@@ -21,8 +20,8 @@
 			</tr>				
 		</table>
 	    <br />
-	    <input type="submit" value="Cambiar contraseña">
-		<input type="reset" value="Borrar"></p>
+	    <button class="btn btn-lg btn-success botones_registro_usuario" type="submit">Cambiar</button>
+			<button class="btn btn-lg btn-info botones_registro_usuario" type="reset">Limpiar</button>
 	</form>
 </div>
 {% endblock %}

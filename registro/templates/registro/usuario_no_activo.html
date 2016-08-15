@@ -1,1 +1,11 @@
-usuario_no_activo
+{% extends "registro/base_login.html" %}
+
+{% block titulo %}Crear Cuenta{% endblock %}
+
+{% block cuerpo %}
+<div align="center">
+	<h3>¡Usuario no activo!</h3>
+	<br />
+	<a href="{% url 'registro:login' %}"><button id="boton" class="btn btn-warning">Volver</button></a>
+</div>
+{% endblock %}

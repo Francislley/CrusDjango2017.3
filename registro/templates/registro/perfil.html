@@ -1,0 +1,24 @@
+{% extends "registro/base.html" %}
+
+{% block titulo %}Registro del Congreso{% endblock %}
+
+{% block cuerpo %}
+<div align="center">
+	<h1>Perfil</h1>
+	<br />
+	<table id="tabla_perfil_usuario" border="0px" cellpadding="0px" cellspacing="0px">
+		<tr>
+			<td><b>Nombre de Usuario:</b> {{usuario.username}}</td>
+		</tr>
+		<tr>
+			<td><b>Nombre propio:</b> {{usuario.first_name}}</td>
+		</tr>
+		<tr>
+			<td><b>Apellido:</b> {{usuario.last_name}}</td>
+		</tr>
+		<tr>
+			<td><b>Correo electrónico: </b>{{usuario.email}}</td>
+		</tr>
+	</table>
+</div>
+{% endblock %}

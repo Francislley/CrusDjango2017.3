@@ -3,35 +3,29 @@
 {% block titulo %}Registro del Congreso{% endblock %}
 
 {% block cuerpo %}
-<span id="ruta_title">
-	<h1>Registrar</h1>
-</span>
-<br />
 <div align="center">
-	<div id="formulario">
-		<form method="post">{% csrf_token %}
-		    <!--{{ form.as_p }}-->
-		    <table id="tabla_registro" border="0px" cellpadding="10px" cellspacing="10px">
-				<tr>
-					<td>Nombre: {{ form.nombre }}</td>
-				</tr>
-				<tr>
-					<td>Apellido: {{ form.apellido }}</td>
-				</tr>
-				<tr>
-					<td>Cedula: {{ form.cedula }}</td>
-				</tr>
-				<tr>
-					<td>Telefono: {{ form.tlf }}</td>
-				</tr>
-				<tr>
-					<td>Ocupacion: {{ form.ocupacion }}</td>
-				</tr>
-			</table>
-			<br />
-		    <input type="submit" value="Registrar" />
-		    <input type="reset" value="Limpiar" />
-		</form>
-	</div>
+	<h1>Registrar</h1>
+	<form method="post">{% csrf_token %}
+	    <table id="tabla_registro_participante" border="0px" cellpadding="5px" cellspacing="5px">
+			<tr>
+				<td>Nombre: {{ form.nombre }}</td>
+			</tr>
+			<tr>
+				<td>Apellido: {{ form.apellido }}</td>
+			</tr>
+			<tr>
+				<td>Cedula: {{ form.cedula }}</td>
+			</tr>
+			<tr>
+				<td>Telefono: {{ form.tlf }}</td>
+			</tr>
+			<tr>
+				<td>Ocupacion: {{ form.ocupacion }}</td>
+			</tr>
+		</table>
+		<br />
+	    <button class="btn btn-lg btn-success botones_registro_usuario" type="submit">Guardar</button>
+		<button class="btn btn-lg btn-info botones_registro_usuario" type="reset">Limpiar</button>
+	</form>
 </div>
 {% endblock %}

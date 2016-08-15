@@ -1,10 +1,10 @@
-{% extends "registro/base.html" %}
+{% extends "registro/base_login.html" %}
 
-{% block titulo %}Registro del Congreso{% endblock %}
+{% block titulo %}Crear Cuenta{% endblock %}
 
 {% block cuerpo %}
 <div align="center">
-	<h3>¡Usuario o contraseña incorrectos!</h3>
+	<h3>¡Datos incorrectos!</h3>
 	<br />
 	<a href="{% url 'registro:login' %}"><button id="boton" class="btn btn-warning">Volver</button></a>
 </div>

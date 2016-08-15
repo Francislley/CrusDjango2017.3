@@ -17,5 +17,6 @@ urlpatterns = patterns('',
   url(r'^logout$', views.Logout, name='logout'),
   url(r'^editar/(?P<pk>\d+)$', views.Editar, name='editar'),
   url(r'^borrar/(?P<pk>\d+)$', views.Borrar, name='borrar'),
+  url(r'^perfil$', views.Perfil, name='perfil'),
   #url(r"^xxxxx/$", view=login_required(Vista_basada_en_Clase.as_view()), name="Vista_basada_en_Clase"),
 )

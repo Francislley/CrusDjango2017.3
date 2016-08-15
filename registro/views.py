@@ -178,6 +178,17 @@ def Cambiar_contrasena(request):
 '''
 Vista de la plantilla que muestra mensaje de cambio de contraseña exitoso.
 '''
+@login_required(login_url='/')
 def Cambio_de_contrasena_exitoso(request):
     usuario = request.user
     return render_to_response('registro/cambio_de_contrasena_exitoso.html', {'usuario':usuario}, context_instance=RequestContext(request))
+
+
+
+'''
+Vista de la plantilla que muestra el perfil del usuario autenticado.
+'''
+@login_required(login_url='/')
+def Perfil(request):
+    usuario = request.user
+    return render_to_response('registro/perfil.html', {'usuario':usuario}, context_instance=RequestContext(request))

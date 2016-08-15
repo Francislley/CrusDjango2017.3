@@ -1,19 +1,13 @@
-{% extends "registro/base.html" %}
+{% extends "registro/base_login.html" %}
 
-{% block titulo %}Registro del Congreso{% endblock %}
-
-{% block cabecera %}
-{% endblock %}
+{% block titulo %}Crear Cuenta{% endblock %}
 
 {% block cuerpo %}
-<span id="ruta_title">
+<div id="cuerpo_form_registro_usuario" align="center">
 	<h1>Crear Cuenta</h1>
-</span>
-<br />
-<div align="center">
+	<br />
 	<form action="" method="post"> {% csrf_token %}
-		<!--table>{{ form }}</table-->
-		<table id="tabla_registro" border="0px" cellpadding="5px" cellspacing="5px" style="text-align: right">
+		<table id="tabla_registro_usuario" border="0px" cellpadding="0px" cellspacing="0px">
 			<tr>
 				<td>Nombre de Usuario: {{form.username}}</td>
 			</tr>
@@ -23,7 +17,7 @@
 			<tr>
 				<td>
 					Contraseña (confirmación): {{form.password2}} <br />
-				</td>						
+				</td>
 			</tr>
 			<tr>
 				<td>Nombre propio: {{form.first_name}}</td>
@@ -32,15 +26,16 @@
 				<td>Apellido: {{form.last_name}}</td>
 			</tr>
 			<tr>
-				<td>Dirección de correo electrónico: {{form.email}}</td>
+				<td>Correo electrónico: {{form.email}}</td>
 			</tr>
 			<tr>
 				<td>¿El usuario estará activo?: {{form.is_active}}</td>
 			</tr>
 		</table>
 		<br />
-	    <input type="submit" value="Crear usuario">
-		<input type="reset" value="Borrar">
+		<a href="{% url 'registro:login' %}"><button type="button" class="btn btn-lg btn-primary botones_registro_usuario">Volver</button></a>
+	    <button class="btn btn-lg btn-success botones_registro_usuario" type="submit">Crear</button>
+		<button class="btn btn-lg btn-info botones_registro_usuario" type="reset">Limpiar</button>
 	</form>
 </div>
 {% endblock %}

@@ -5,7 +5,7 @@
 {% block cuerpo %}
 <form method="post">{% csrf_token %}
     ¿Esta seguro de eliminar a "{{ object }}"?
-    <input type="submit" value="Borrar" />
+    <button class="btn btn-lg btn-success" type="submit">Borrar</button>
 </form>
 {% endblock %}
 

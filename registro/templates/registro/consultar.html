@@ -3,40 +3,10 @@
 {% block titulo %}Registro del Congreso{% endblock %}
 
 {% block cuerpo %}
-<span id="ruta_title">
-	<h1>Registros</h1>
-</span>
-<br />
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-table#tabla_consulta th    {
-    background-color: DodgerBlue;
-    color: white;
-}
-table#tabla_consulta {
-  color: black;
-}
-
-table#tabla_consulta tr:nth-child(even) {
-}
-table#tabla_consulta tr:nth-child(even):hover {
-    background-color: #A9E2F3;
-}
-table#tabla_consulta tr:nth-child(odd) {
-}
-table#tabla_consulta tr:nth-child(odd):hover {
-   background-color: #A9E2F3;
-}
-</style>
 <div align="center">
-	<table id="tabla_consulta" border="1px" cellpadding="10px" cellspacing="10px">
+	<h1>Registros</h1>
+	<br />
+	<table id="tabla_consulta_asistentes" border="1px" cellpadding="10px" cellspacing="10px">
 		<tr>
 			<th><b>N</b></th>
 			<th><b>Nombre</b></th>
@@ -55,8 +25,8 @@ table#tabla_consulta tr:nth-child(odd):hover {
 			<td>{{ persona.cedula }}</td>
 			<td>{{ persona.tlf }}</td>
 			<td>{{ persona.ocupacion }}</td>
-			<td><a href="{% url 'registro:editar' persona.id %}">editar</a></td>
-			<td><a href="{% url 'registro:borrar' persona.id %}">borrar</a></td>
+			<td><a href="{% url 'registro:editar' persona.id %}">Editar</a></td>
+			<td><a href="{% url 'registro:borrar' persona.id %}">Borrar</a></td>
 	    </li>
 		</tr>
 		{% endfor %}

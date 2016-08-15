@@ -3,22 +3,23 @@
 {% block titulo %}Iniciar sesión{% endblock %}
 
 {% block cuerpo %}
-<div id="titulo_login" align="center">
-	<h1>Sistema de Registro<br />
-	de participantes <br />
-	del Congreso
-	</h1>
-</div>
-<div class="login">
-	<form id='formulario' method='post' action=''>{% csrf_token %}
-		Nombre de Usuario: {{formulario.username}}
+<div align="left">
+	<form class="form-signin" method='post' action=''>{% csrf_token %}
+		<div align="center">
+		  <h2 class="form-signin-heading">Iniciar sesión</h2>
+		  <br />
+		</div>
+		<span id="text_form">Usuario:</span><br />
+		{{formulario.username}}
 		<br />
 		<br />
-		Contraseña: {{formulario.password}}
+		<span id="text_form">Contraseña:</span><br />
+		{{formulario.password}}
 		<br />
 		<br />
-		<button type="submit" class="btn btn-primary btn-block btn-large">Entrar</button>
+		<button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+		<br />
+		<a href="{% url 'registro:crear_usuario' %}"><button type="button" class="btn btn-lg btn-primary btn-block">Crear Cuenta</button></a>
 	</form>
-	<a href="{% url 'registro:crear_usuario' %}"><button id="boton_crear_cuenta" class="btn btn-primary btn-block btn-large">Crear Cuenta</button></a>
 </div>
 {% endblock %}
